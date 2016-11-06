@@ -1,0 +1,26 @@
+   %Semnal dreptunghiular multinivel
+
+    a=[-3,-1,1,3]
+    N = 4;
+    ts = 0.001;
+    t = 0:ts:N;
+    
+    k = 1;
+    
+    for i = 1:length(t)
+     if  t(i) <= k*0.25
+         if k <= length(a)
+             x(i) = a(k);
+         else
+             x(i) = 0;
+         end
+     else
+        if k <= length(a)
+             x(i) = a(k);
+        end
+        k = k+1; 
+     end
+    end
+    
+    axis([0 20 -5 3])
+    plot(t,x);
